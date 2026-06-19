@@ -1,17 +1,187 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Samantha Ritter & Daniel Brykalov">
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">OFFICIAL WEBSITE</div>
+
+      <h1 class="hero-title">
+        <span>Samantha Ritter</span>
+        <span class="line-two">& Daniel Brykalov</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        International Ice Dance Team Representing Azerbaijan
+      </p>
+
+      <div class="hero-buttons">
+        <a href="/journey" class="btn btn-gold">Our Journey</a>
+        <a href="/results" class="btn btn-ice">Results</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style is:global>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(
+        circle at 74% 34%,
+        rgba(255, 255, 255, 0.30) 0%,
+        rgba(255, 255, 255, 0.14) 22%,
+        rgba(255, 255, 255, 0.04) 42%,
+        rgba(255, 255, 255, 0) 66%
+      ),
+      linear-gradient(
+        180deg,
+        #0c1f38 0%,
+        #16365d 45%,
+        #214c7d 100%
+      );
+  }
+
+  .hero-content {
+    padding-top: 4rem;
+  }
+
+  .eyebrow {
+    color: #f3d46b;
+    font-size: 0.95rem;
+    letter-spacing: 0.28em;
+    font-weight: 900;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 3.5vw, 4.3rem);
+    line-height: 1.10;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+
+    background: linear-gradient(
+      180deg,
+      #fff8d8 0%,
+      #ffe27a 45%,
+      #d6a832 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.28),
+    0 3px 0 rgba(122, 86, 10, 0.35),
+    0 8px 16px rgba(0, 0, 0, 0.24);
+  }
+
+  .hero-title span {
+    display: block;
+  }
+
+  .hero-title .line-two {
+    padding-left: 0.75em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.45rem;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 760px;
+    margin-bottom: 2.8rem;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
+  }
+
+  .hero-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .btn {
+    padding: 16px 34px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .25s ease;
+  }
+
+  .btn-gold {
+    background: linear-gradient(
+      180deg,
+      #fff1b8 0%,
+      #f2cd5a 45%,
+      #c9942e 100%
+    );
+    color: #10213d;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow:
+      0 3px 0 #8c6713,
+      0 12px 24px rgba(0,0,0,.25);
+  }
+
+  .btn-gold:hover {
+    background: linear-gradient(
+      180deg,
+      #fff8d8 0%,
+      #ffe27a 45%,
+      #d6a832 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      0 4px 0 #9b7418,
+      0 18px 34px rgba(0, 0, 0, 0.28),
+      0 0 22px rgba(255, 226, 122, 0.35);
+  }
+
+.btn-ice {
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.30);
+
+  color: white;
+
+  border-radius: 999px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 8px 20px rgba(0,0,0,0.15);
+
+  backdrop-filter: blur(8px);
+}
+
+.btn-ice:hover {
+  background: rgba(255,255,255,0.16);
+
+  border-color: rgba(243,212,107,0.85);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 0 20px rgba(243,212,107,0.18),
+    0 10px 24px rgba(0,0,0,0.22);
+
+  color: #ffffff;
+}
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 700px) {
+    .hero-title {
+      font-size: clamp(2.8rem, 11vw, 4rem);
+    }
+
+    .hero-title .line-two {
+      padding-left: 0;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+    }
+  }
+</style>
