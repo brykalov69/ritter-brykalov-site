@@ -16,6 +16,12 @@ import MainLayout from "../layouts/MainLayout.astro";
         International Ice Dance Team Representing Azerbaijan
       </p>
 
+      <img
+        class="hero-skaters hero-skaters-mobile"
+        src="/images/hero-skaters-cutout.png"
+        alt="Samantha Ritter and Daniel Brykalov performing on ice"
+      />
+
       <div class="hero-buttons">
         <a href="/journey" class="btn btn-gold">Our Journey</a>
         <a href="/results" class="btn btn-ice">Results</a>
@@ -23,7 +29,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
 
     <img
-      class="hero-skaters"
+      class="hero-skaters hero-skaters-desktop"
       src="/images/hero-skaters-cutout.png"
       alt="Samantha Ritter and Daniel Brykalov performing on ice"
     />
@@ -32,18 +38,18 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <style is:global>
   .hero {
-  position: relative;
- height: 100vh;
-min-height: 100vh;
-max-height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background-image: url("/images/hero-bg.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-image: url("/images/hero-bg.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   .hero::after {
     content: "";
@@ -60,11 +66,10 @@ max-height: 100vh;
 
   .hero-content {
     position: relative;
-    padding-top: 72px;
     z-index: 3;
     width: min(100% - 2rem, 1280px);
     margin-inline: auto;
-    padding-left: -1rem;
+    padding-top: 72px;
     transform: translateY(-1rem);
   }
 
@@ -83,12 +88,10 @@ max-height: 100vh;
     letter-spacing: -0.045em;
     margin-bottom: 1.45rem;
     max-width: 620px;
-
     background: linear-gradient(180deg, #fff8d8 0%, #ffe27a 45%, #d6a832 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
     text-shadow:
       0 1px 0 rgba(255,255,255,0.25),
       0 3px 0 rgba(122,86,10,0.35),
@@ -151,13 +154,7 @@ max-height: 100vh;
   }
 
   .hero-skaters {
-    position: absolute;
-    z-index: 2;
-     right: clamp(8rem, 30vw, 32rem);
-    bottom: 2rem;
-    height: min(84svh, 860px);
     width: auto;
-    max-width: 48vw;
     object-fit: contain;
     filter:
       drop-shadow(0 0 5px rgba(220,235,255,0.16))
@@ -165,61 +162,102 @@ max-height: 100vh;
       drop-shadow(0 30px 44px rgba(0,0,0,0.42));
   }
 
+  .hero-skaters-mobile {
+    display: none;
+  }
+
+  .hero-skaters-desktop {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    right: clamp(8rem, 30vw, 32rem);
+    bottom: 2rem;
+    height: min(84svh, 860px);
+    max-width: 48vw;
+  }
+
   @media (max-width: 950px) {
     .hero {
+      height: 100svh;
       min-height: 100svh;
-      align-items: flex-end;
-      padding: 7rem 0 3rem;
+      max-height: none;
+      align-items: flex-start;
+      padding: 7.5rem 0 2rem;
       background-size: cover;
-      background-position: center top;
-    }
-
-    .hero::after {
-      background: linear-gradient(
-        180deg,
-        rgba(4,13,27,0.10) 0%,
-        rgba(4,13,27,0.46) 48%,
-        rgba(4,13,27,0.88) 100%
-      );
-    }
-
-    .hero-skaters {
-      right: 50%;
-      bottom: 36%;
-      transform: translateX(50%);
-      height: min(48vh, 470px);
-      max-width: 92vw;
-      opacity: 0.92;
+      background-position: 62% center;
     }
 
     .hero-content {
-      padding-left: 0;
+      width: min(100% - 1.75rem, 520px);
+      padding-top: 0;
       transform: none;
+      margin-inline: auto;
+    }
+
+    .hero-skaters-desktop {
+      display: none;
+    }
+
+    .hero-skaters-mobile {
+      display: block;
+      position: relative;
+      height: min(39vh, 370px);
+      max-width: 88vw;
+      margin: 1.15rem auto 1.35rem;
+      opacity: 0.96;
     }
 
     .eyebrow {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       letter-spacing: 0.24em;
+      margin-bottom: 0.8rem;
     }
 
     .hero-title {
-      font-size: clamp(2.45rem, 10vw, 3.7rem);
+      font-size: clamp(2rem, 8vw, 2.85rem);
+      line-height: 0.98;
       max-width: 100%;
-    }
-
-    .hero-title span {
-      white-space: normal;
+      margin-bottom: 0.85rem;
     }
 
     .hero-subtitle {
-      font-size: 1.05rem;
-      max-width: 24rem;
-      margin-bottom: 1.8rem;
+      font-size: 1rem;
+      line-height: 1.45;
+      max-width: 23rem;
+      margin-bottom: 0;
+    }
+
+    .hero-buttons {
+      gap: 1rem;
     }
 
     .btn {
-      padding: 14px 26px;
+      padding: 13px 24px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .hero {
+      padding-top: 7.25rem;
     }
 
+    .hero-skaters-mobile {
+      height: min(37vh, 350px);
+      max-width: 88vw;
+      margin: 1rem auto 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.85rem, 8vw, 2.45rem);
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      max-width: 20rem;
+    }
+
+    .btn {
+      padding: 12px 22px;
+    }
   }
 </style>
