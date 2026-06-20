@@ -4,12 +4,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Samantha Ritter & Daniel Brykalov">
   <section class="hero">
-    <div class="container hero-content">
+    <div class="hero-content">
       <div class="eyebrow">OFFICIAL WEBSITE</div>
 
       <h1 class="hero-title">
         <span>Samantha Ritter</span>
-        <span class="line-two">& Daniel Brykalov</span>
+        <span>& Daniel Brykalov</span>
       </h1>
 
       <p class="hero-subtitle">
@@ -21,167 +21,205 @@ import MainLayout from "../layouts/MainLayout.astro";
         <a href="/results" class="btn btn-ice">Results</a>
       </div>
     </div>
+
+    <img
+      class="hero-skaters"
+      src="/images/hero-skaters-cutout.png"
+      alt="Samantha Ritter and Daniel Brykalov performing on ice"
+    />
   </section>
 </MainLayout>
 
 <style is:global>
   .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background:
-      radial-gradient(
-        circle at 74% 34%,
-        rgba(255, 255, 255, 0.30) 0%,
-        rgba(255, 255, 255, 0.14) 22%,
-        rgba(255, 255, 255, 0.04) 42%,
-        rgba(255, 255, 255, 0) 66%
-      ),
-      linear-gradient(
-        180deg,
-        #0c1f38 0%,
-        #16365d 45%,
-        #214c7d 100%
-      );
+  position: relative;
+ height: 100vh;
+min-height: 100vh;
+max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-image: url("/images/hero-bg.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(2, 10, 22, 0.34) 0%,
+      rgba(2, 10, 22, 0.18) 42%,
+      rgba(2, 10, 22, 0.02) 100%
+    );
+    pointer-events: none;
   }
 
   .hero-content {
-    padding-top: 4rem;
+    position: relative;
+    padding-top: 72px;
+    z-index: 3;
+    width: min(100% - 2rem, 1280px);
+    margin-inline: auto;
+    padding-left: -1rem;
+    transform: translateY(-1rem);
   }
 
   .eyebrow {
     color: #f3d46b;
-    font-size: 0.95rem;
+    font-size: 0.86rem;
     letter-spacing: 0.28em;
     font-weight: 900;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-title {
-    font-size: clamp(3rem, 3.5vw, 4.3rem);
-    line-height: 1.10;
+    font-size: clamp(2.4rem, 3vw, 4rem);
+    line-height: 0.96;
     font-weight: 900;
-    letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
+    letter-spacing: -0.045em;
+    margin-bottom: 1.45rem;
+    max-width: 620px;
 
-    background: linear-gradient(
-      180deg,
-      #fff8d8 0%,
-      #ffe27a 45%,
-      #d6a832 100%
-    );
-
+    background: linear-gradient(180deg, #fff8d8 0%, #ffe27a 45%, #d6a832 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
     text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.28),
-    0 3px 0 rgba(122, 86, 10, 0.35),
-    0 8px 16px rgba(0, 0, 0, 0.24);
+      0 1px 0 rgba(255,255,255,0.25),
+      0 3px 0 rgba(122,86,10,0.35),
+      0 8px 16px rgba(0,0,0,0.26);
   }
 
   .hero-title span {
     display: block;
-  }
-
-  .hero-title .line-two {
-    padding-left: 0.75em;
+    white-space: nowrap;
   }
 
   .hero-subtitle {
-    font-size: 1.45rem;
-    color: rgba(255, 255, 255, 0.92);
-    max-width: 760px;
-    margin-bottom: 2.8rem;
-    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
+    font-size: 1.18rem;
+    color: rgba(255,255,255,0.94);
+    max-width: 650px;
+    margin-bottom: 2.4rem;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.35);
   }
 
   .hero-buttons {
-    margin-top: 1rem;
     display: flex;
     gap: 1.25rem;
+    flex-wrap: wrap;
   }
 
   .btn {
-    padding: 16px 34px;
+    padding: 15px 32px;
     border-radius: 999px;
     font-weight: 700;
     text-decoration: none;
-    transition: all .25s ease;
+    transition: all 0.25s ease;
   }
 
   .btn-gold {
-    background: linear-gradient(
-      180deg,
-      #fff1b8 0%,
-      #f2cd5a 45%,
-      #c9942e 100%
-    );
+    background: linear-gradient(180deg, #fff1b8 0%, #f2cd5a 45%, #c9942e 100%);
     color: #10213d;
     border: 1px solid rgba(255,255,255,0.25);
-    box-shadow:
-      0 3px 0 #8c6713,
-      0 12px 24px rgba(0,0,0,.25);
+    box-shadow: 0 3px 0 #8c6713, 0 12px 24px rgba(0,0,0,.25);
   }
 
   .btn-gold:hover {
-    background: linear-gradient(
-      180deg,
-      #fff8d8 0%,
-      #ffe27a 45%,
-      #d6a832 100%
-    );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.75),
-      0 4px 0 #9b7418,
-      0 18px 34px rgba(0, 0, 0, 0.28),
-      0 0 22px rgba(255, 226, 122, 0.35);
-  }
-
-.btn-ice {
-  background: rgba(255,255,255,0.08);
-
-  border: 1px solid rgba(255,255,255,0.30);
-
-  color: white;
-
-  border-radius: 999px;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    0 8px 20px rgba(0,0,0,0.15);
-
-  backdrop-filter: blur(8px);
-}
-
-.btn-ice:hover {
-  background: rgba(255,255,255,0.16);
-
-  border-color: rgba(243,212,107,0.85);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.25),
-    0 0 20px rgba(243,212,107,0.18),
-    0 10px 24px rgba(0,0,0,0.22);
-
-  color: #ffffff;
-}
-  .btn:hover {
+    background: linear-gradient(180deg, #fff8d8 0%, #ffe27a 45%, #d6a832 100%);
     transform: translateY(-2px);
   }
 
-  @media (max-width: 700px) {
-    .hero-title {
-      font-size: clamp(2.8rem, 11vw, 4rem);
+  .btn-ice {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.34);
+    color: white;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.10),
+      0 8px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(8px);
+  }
+
+  .btn-ice:hover {
+    background: rgba(255,255,255,0.16);
+    border-color: rgba(243,212,107,0.85);
+    transform: translateY(-2px);
+  }
+
+  .hero-skaters {
+    position: absolute;
+    z-index: 2;
+     right: clamp(8rem, 30vw, 32rem);
+    bottom: 2rem;
+    height: min(84svh, 860px);
+    width: auto;
+    max-width: 48vw;
+    object-fit: contain;
+    filter:
+      drop-shadow(0 0 5px rgba(220,235,255,0.16))
+      drop-shadow(0 0 14px rgba(220,235,255,0.10))
+      drop-shadow(0 30px 44px rgba(0,0,0,0.42));
+  }
+
+  @media (max-width: 950px) {
+    .hero {
+      min-height: 100svh;
+      align-items: flex-end;
+      padding: 7rem 0 3rem;
+      background-size: cover;
+      background-position: center top;
     }
 
-    .hero-title .line-two {
+    .hero::after {
+      background: linear-gradient(
+        180deg,
+        rgba(4,13,27,0.10) 0%,
+        rgba(4,13,27,0.46) 48%,
+        rgba(4,13,27,0.88) 100%
+      );
+    }
+
+    .hero-skaters {
+      right: 50%;
+      bottom: 36%;
+      transform: translateX(50%);
+      height: min(48vh, 470px);
+      max-width: 92vw;
+      opacity: 0.92;
+    }
+
+    .hero-content {
       padding-left: 0;
+      transform: none;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+    }
+
+    .hero-title {
+      font-size: clamp(2.45rem, 10vw, 3.7rem);
+      max-width: 100%;
+    }
+
+    .hero-title span {
+      white-space: normal;
     }
 
     .hero-subtitle {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
+      max-width: 24rem;
+      margin-bottom: 1.8rem;
     }
+
+    .btn {
+      padding: 14px 26px;
+    }
+
   }
 </style>
