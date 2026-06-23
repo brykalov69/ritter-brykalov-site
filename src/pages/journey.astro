@@ -1,0 +1,428 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Our Journey | Samantha Ritter & Daniel Brykalov">
+  <section class="journey-page">
+    <div class="journey-hero">
+      <div class="journey-hero-text">
+        <p class="eyebrow">OUR JOURNEY</p>
+        <h1>Two Paths. One Dream.</h1>
+        <p>
+          Before becoming an international ice dance team, Samantha Ritter and
+          Daniel Brykalov spent years training side by side as friends — sharing
+          the same ice, the same dedication, and the same dream of reaching the
+          highest level of the sport.
+        </p>
+      </div>
+
+      <div class="hero-image-card">
+        <img src="/images/journey-hero.jpg" alt="Samantha Ritter and Daniel Brykalov" />
+      </div>
+    </div>
+
+    <div class="timeline">
+      <article class="timeline-card">
+        <span class="year">2018</span>
+        <h2>The Beginning</h2>
+        <p>
+          Samantha and Daniel first met in Novi, Michigan in 2018 while training
+          under renowned coach Igor Shpilband. Although they skated with
+          different partners at the time, they quickly developed a strong
+          friendship built through countless hours of training and shared
+          experiences on and off the ice.
+        </p>
+      </article>
+
+      <article class="timeline-card">
+        <span class="year">2021</span>
+        <h2>A New Partnership</h2>
+        <p>
+          After years of training alongside each other, Samantha and Daniel made
+          a decision that would change the course of their careers. In January
+          2021, they officially joined forces as an ice dance team.
+        </p>
+        <p>
+          Their friendship had already created a strong foundation of trust,
+          commitment, and belief in what they could achieve together.
+        </p>
+      </article>
+
+      <article class="timeline-card canada-card">
+        <span class="year">2021–2026</span>
+        <h2>A New Home in Canada</h2>
+        <p>
+          Shortly after forming their partnership, Samantha and Daniel relocated
+          to London, Ontario, Canada, to continue pursuing their goals at the
+          highest level of international ice dance.
+        </p>
+        <p>
+          There, they trained at the Ice Academy of Montreal's London Campus
+          under the guidance of Olympic Champion and ice dance legend Scott Moir,
+          whose experience and leadership helped shape the next stage of their
+          development as athletes.
+        </p>
+        <p>
+          Their years in Canada became a defining chapter of their career.
+          Working within one of the world's most respected training environments,
+          Samantha and Daniel refined their technical skills, strengthened their
+          partnership, and gained invaluable international experience.
+        </p>
+        <p>
+          Under Scott Moir's guidance, they achieved one of their most important
+          milestones, earning qualification to the World Championships on two
+          separate occasions and continuing to establish themselves on the
+          international stage.
+        </p>
+
+        <div class="achievement-strip">
+          <div>
+            <strong>Olympic Champion Guidance</strong>
+            <span>Training under Scott Moir</span>
+          </div>
+          <div>
+            <strong>Two World Qualifications</strong>
+            <span>Representing Azerbaijan internationally</span>
+          </div>
+          <div>
+            <strong>Elite Training Environment</strong>
+            <span>Ice Academy of Montreal — London Campus</span>
+          </div>
+        </div>
+
+        <p>
+          Samantha and Daniel remain deeply grateful to Scott Moir, the coaching
+          staff, and everyone who supported their development during this
+          important period of their journey.
+        </p>
+
+        <div class="photo-pair">
+          <img src="/images/canada-worlds-1.jpg" alt="Samantha and Daniel at an international competition" />
+          <img src="/images/canada-worlds-2.jpg" alt="Samantha and Daniel performing on the world stage" />
+        </div>
+      </article>
+
+      <article class="timeline-card flag-card">
+        <span class="year">Azerbaijan</span>
+        <h2>Representing Azerbaijan</h2>
+
+        <p class="flag-intro">
+          <strong>International pride. National responsibility.</strong>
+        </p>
+
+        <p>
+          Representing Azerbaijan is a source of tremendous pride and
+          responsibility for Samantha and Daniel.
+        </p>
+        <p>
+          Every competition is an opportunity to showcase not only their athletic
+          abilities, but also the passion, artistry, and dedication that define
+          the sport of ice dance.
+        </p>
+        <p>
+          As they continue their journey, Samantha and Daniel remain committed to
+          representing Azerbaijan with professionalism, integrity, and excellence
+          on the international stage.
+        </p>
+      </article>
+
+      <article class="timeline-card highlight">
+        <span class="year">2026 — New Jersey</span>
+        <h2>A New Chapter</h2>
+        <p>
+          In the summer of 2026, Samantha and Daniel embraced the next step in
+          their competitive journey. After several successful seasons in Canada,
+          they relocated to New Jersey to join a new coaching team led by
+          Olympian Igor Lukanin.
+        </p>
+        <p>
+          As a former Olympic athlete and international competitor who proudly
+          represented Azerbaijan, Igor brings a unique perspective and firsthand
+          understanding of the path Samantha and Daniel are pursuing.
+        </p>
+        <p>
+          Beginning July 1, 2026, Samantha and Daniel start this new chapter
+          with renewed motivation, fresh energy, and a clear vision for the
+          future.
+        </p>
+        <p>
+          While they will always value the lessons and achievements that shaped
+          their years in Canada, they are equally excited about the opportunities
+          ahead and look forward to working with their new coaching team as they
+          continue representing Azerbaijan on the international stage.
+        </p>
+      </article>
+
+      <article class="timeline-card final-card">
+        <span class="year">Future</span>
+        <h2>Building Toward the Future</h2>
+        <p>
+          Their story is still being written. With every competition, every
+          performance, and every season on the ice, Samantha and Daniel continue
+          pursuing excellence and pushing the boundaries of what they can
+          achieve together.
+        </p>
+      </article>
+    </div>
+  </section>
+</MainLayout>
+
+<style is:global>
+  .journey-page {
+    min-height: 100vh;
+    padding: 9rem 1rem 5rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 10, 22, 0.94) 0%,
+        rgba(10, 28, 52, 0.96) 45%,
+        rgba(5, 12, 24, 1) 100%
+      ),
+      url("/images/hero-bg.png");
+    background-size: cover;
+    background-position: center top;
+    color: white;
+  }
+
+  .journey-hero {
+    width: min(100%, 1180px);
+    margin: 0 auto 5rem;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .journey-hero .eyebrow,
+  .year {
+    color: #f3d46b;
+    font-size: 0.9rem;
+    letter-spacing: 0.28em;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .journey-hero h1 {
+    white-space: nowrap;
+    font-size: clamp(3.2rem, 4.8vw, 5.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(180deg, #fff8d8 0%, #ffe27a 45%, #d6a832 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.25),
+      0 3px 0 rgba(122,86,10,0.35),
+      0 8px 16px rgba(0,0,0,0.26);
+  }
+
+  .journey-hero p {
+    max-width: 760px;
+    font-size: 1.22rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  .hero-image-card,
+  .photo-pair img {
+    overflow: hidden;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  }
+
+  .hero-image-card {
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-image-card img,
+  .photo-pair img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .timeline {
+    width: min(100%, 1080px);
+    margin: 0 auto;
+    display: grid;
+    gap: 1.7rem;
+  }
+
+  .timeline-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.075);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(14px);
+  }
+
+  .timeline-card.highlight,
+  .timeline-card.final-card {
+    border-color: rgba(243, 212, 107, 0.45);
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.28),
+      0 0 34px rgba(243, 212, 107, 0.12);
+  }
+
+  .flag-card {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(243, 212, 107, 0.32);
+  }
+
+ .flag-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,168,225,.28) 0%,
+      rgba(0,168,225,.28) 33%,
+      rgba(237,41,57,.24) 33%,
+      rgba(237,41,57,.24) 66%,
+      rgba(0,146,70,.26) 66%,
+      rgba(0,146,70,.26) 100%
+    );
+
+  z-index: 0;
+}
+
+.flag-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8,14,26,.62),
+      rgba(18,28,46,.42)
+    );
+
+  z-index: 1;
+}
+
+  .flag-card > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-card h2 {
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: #fff2b5;
+  }
+
+  .timeline-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 1rem;
+  }
+
+  .timeline-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .achievement-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .achievement-strip div {
+    padding: 1.15rem;
+    border-radius: 20px;
+    background: rgba(243, 212, 107, 0.08);
+    border: 1px solid rgba(243, 212, 107, 0.22);
+  }
+
+  .achievement-strip strong {
+    display: block;
+    color: #fff2b5;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .achievement-strip span {
+    display: block;
+    color: rgba(255,255,255,0.72);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .photo-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .photo-pair img {
+    aspect-ratio: 4 / 3;
+  }
+
+  @media (min-width: 900px) {
+    .timeline-card {
+      width: 82%;
+    }
+
+    .timeline-card:nth-child(even) {
+      margin-left: auto;
+    }
+
+    .canada-card,
+    .flag-card {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .journey-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .journey-hero h1 {
+      white-space: normal;
+    }
+
+    .achievement-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .journey-page {
+      padding-top: 8rem;
+    }
+
+    .journey-hero {
+      margin-bottom: 3rem;
+    }
+
+    .journey-hero p,
+    .timeline-card p {
+      font-size: 1rem;
+    }
+
+    .timeline-card {
+      padding: 1.5rem;
+      border-radius: 22px;
+    }
+
+    .photo-pair {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

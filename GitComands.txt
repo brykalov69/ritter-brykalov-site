@@ -1,0 +1,3 @@
+cd C:\Users\bryka\ritter-brykalov-site
+npm run dev
+http://localhost:4321/
