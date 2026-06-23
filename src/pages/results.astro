@@ -1,0 +1,111 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Results | Samantha Ritter & Daniel Brykalov">
+  <section class="placeholder-page">
+    <div class="placeholder-content">
+      <p class="eyebrow">RESULTS</p>
+
+      <h1>Results</h1>
+
+      <h2>Competitive progress. Season by season.</h2>
+
+      <p>
+        Official competition results and
+        season highlights will be published here
+        as new events take place.
+      </p>
+
+      <div class="info-box">
+        For official records and international standings,
+        please visit the ISU database.
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style is:global>
+.placeholder-page {
+  min-height: 100vh;
+  padding: 9rem 1rem 5rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3,10,22,.94) 0%,
+      rgba(10,28,52,.96) 45%,
+      rgba(5,12,24,1) 100%
+    ),
+    url("/images/hero-bg.png");
+
+  background-size: cover;
+  background-position: center top;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder-content {
+  width: min(100%, 900px);
+  text-align: center;
+}
+
+.eyebrow {
+  color: #f3d46b;
+  font-size: .9rem;
+  letter-spacing: .28em;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.placeholder-content h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+
+  background: linear-gradient(
+    180deg,
+    #fff8d8 0%,
+    #ffe27a 45%,
+    #d6a832 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 1rem;
+}
+
+.placeholder-content h2 {
+  color: #fff2b5;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+.placeholder-content p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255,255,255,.82);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.coming-soon,
+.info-box {
+  margin-top: 2rem;
+
+  padding: 1.25rem 2rem;
+
+  border-radius: 999px;
+
+  display: inline-block;
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(243,212,107,.35);
+
+  color: #fff2b5;
+
+  font-weight: 700;
+}
+</style>

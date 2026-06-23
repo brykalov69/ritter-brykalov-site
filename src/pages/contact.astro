@@ -1,0 +1,228 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Contact | Samantha Ritter & Daniel Brykalov">
+  <section class="contact-page">
+    <div class="contact-wrap">
+      <div class="contact-intro">
+        <p class="eyebrow">CONTACT</p>
+        <h1>Get in Touch</h1>
+        <p>
+          We welcom sponsorship opportunities, media inquiries, event appearances,
+          collaboration requests, or general communication, please contact
+          Samantha Ritter and Daniel Brykalov through the form below.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <form id="contactForm" class="contact-form">
+          <label>
+            Name
+            <input id="name" type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email
+            <input id="email" type="email" name="email" placeholder="your@email.com" required />
+          </label>
+
+          <label>
+            Subject
+            <input id="subject" type="text" name="subject" placeholder="Message subject" required />
+          </label>
+
+          <label>
+            Message
+            <textarea id="message" name="message" rows="7" placeholder="Write your message..." required></textarea>
+          </label>
+
+          <button type="submit" class="send-button">Send Message</button>
+        </form>
+
+        <div class="direct-email">
+          <span>Direct email</span>
+          <a href="mailto:contact@ritter-brykalov.info">
+            contact@ritter-brykalov.info
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  const form = document.getElementById("contactForm");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById("name") as HTMLInputElement;
+    const email = document.getElementById("email") as HTMLInputElement;
+    const subject = document.getElementById("subject") as HTMLInputElement;
+    const message = document.getElementById("message") as HTMLTextAreaElement;
+
+    const body = [
+      `Name: ${name.value}`,
+      `Email: ${email.value}`,
+      "",
+      message.value,
+    ].join("\n");
+
+    const mailto = `mailto:contact@ritter-brykalov.info?subject=${encodeURIComponent(
+      subject.value
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+  });
+</script>
+
+<style is:global>
+  .contact-page {
+    min-height: 100vh;
+    padding: 9rem 1rem 5rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 10, 22, 0.94) 0%,
+        rgba(10, 28, 52, 0.96) 45%,
+        rgba(5, 12, 24, 1) 100%
+      ),
+      url("/images/hero-bg.png");
+    background-size: cover;
+    background-position: center top;
+    color: white;
+  }
+
+  .contact-wrap {
+    width: min(100%, 1080px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-intro .eyebrow {
+    color: #f3d46b;
+    font-size: 0.9rem;
+    letter-spacing: 0.28em;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-intro h1 {
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(180deg, #fff8d8 0%, #ffe27a 45%, #d6a832 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.25),
+      0 3px 0 rgba(122,86,10,0.35),
+      0 8px 16px rgba(0,0,0,0.26);
+  }
+
+  .contact-intro p {
+    font-size: 1.18rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.84);
+  }
+
+  .contact-card {
+    padding: 2rem;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.075);
+    border: 1px solid rgba(255,255,255,0.13);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    backdrop-filter: blur(14px);
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .contact-form label {
+    display: grid;
+    gap: 0.45rem;
+    color: #fff2b5;
+    font-weight: 700;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 16px;
+    padding: 14px 16px;
+    background: rgba(3, 10, 22, 0.65);
+    color: white;
+    font: inherit;
+    outline: none;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: rgba(243,212,107,0.75);
+    box-shadow: 0 0 0 3px rgba(243,212,107,0.12);
+  }
+
+  .send-button {
+    margin-top: 0.5rem;
+    padding: 15px 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: linear-gradient(180deg, #fff1b8 0%, #f2cd5a 45%, #c9942e 100%);
+    color: #10213d;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #8c6713, 0 12px 24px rgba(0,0,0,.25);
+  }
+
+  .send-button:hover {
+    background: linear-gradient(180deg, #fff8d8 0%, #ffe27a 45%, #d6a832 100%);
+    transform: translateY(-2px);
+  }
+
+  .direct-email {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .direct-email span {
+    color: rgba(255,255,255,0.62);
+    font-size: 0.9rem;
+  }
+
+  .direct-email a {
+    color: #fff2b5;
+    font-weight: 800;
+  }
+
+  @media (max-width: 850px) {
+    .contact-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .contact-page {
+      padding-top: 8rem;
+    }
+
+    .contact-card {
+      padding: 1.4rem;
+      border-radius: 22px;
+    }
+
+    .contact-intro p {
+      font-size: 1rem;
+    }
+  }
+</style>
